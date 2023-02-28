@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const responseSchema = require('../../../UCF-VIRT-FSF-FT-12-2022-U-LOLC/18-NoSQL/01-Activities/25-Ins_CRUD-Subdoc/models/Response');
+
 
 const reactionSchema = new Schema(
     {
@@ -40,5 +40,6 @@ const reactionSchema = new Schema(
       }
     )
 
+    const Reaction = model('reaction', reactionSchema)
 
-module.exports = responseSchema;
+module.exports = Reaction;
