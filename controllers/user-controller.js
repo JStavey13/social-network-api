@@ -1,4 +1,6 @@
 const User = require('../models/User');
+const { Reaction } = require('../models/index')
+const Thought = require('../models/Thought')
 
 const userController = {
 getUsers(req, res) {
