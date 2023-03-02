@@ -31,6 +31,21 @@ const thoughtController = {
           .then(() => res.json({ message: 'Thought and associated apps deleted!' }))
           .catch((err) => res.status(500).json(err));
       },
+      updateThought(req, res) {
+        Thought.findOneAndUpdate(
+          { _id: req.params.thoughtId },
+          req.body,
+          { runValidators: true, new: true }
+        )
+          .then((thought) =>
+            !thought
+              ? res
+                  .status(404)
+                  .json({ message: 'No thought found with that ID :(' })
+              : res.json(thought)
+          )
+          .catch((err) => res.status(500).json(err));
+      },
 }
 
 
