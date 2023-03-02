@@ -25,9 +25,7 @@ const thoughtSchema = new Schema(
       },
   
       // references the reaction model
-      reactions: [
-         reactionSchema
-      ]
+      reactions: [reactionSchema]
   },
   {
       //allows virtuals to be included
