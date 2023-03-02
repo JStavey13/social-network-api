@@ -26,7 +26,7 @@ const thoughtController = {
           .then((thought) =>
             !thought
               ? res.status(404).json({ message: 'No thought with that ID' })
-              : Application.deleteMany({ _id: { $in: thought.applications } })
+              : User.deleteMany({ _id: { $in: thought.user } })
           )
           .then(() => res.json({ message: 'Thought and associated apps deleted!' }))
           .catch((err) => res.status(500).json(err));
